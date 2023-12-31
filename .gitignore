@@ -5,7 +5,6 @@ mod_dev/.gitignore
 # Ignores for Neural Network
 #################################################################
 
-.idea/
 __pycache__/
 *.pyc
 
@@ -14,10 +13,7 @@ __pycache__/
 #################################################################
 
 # Compiled class files
-mod_dev/*.class
-
-# Log files
-mod_dev/*.log
+*.class
 
 # temporary files which can be created if a process still has a handle open of a deleted file
 .fuse_hidden*
