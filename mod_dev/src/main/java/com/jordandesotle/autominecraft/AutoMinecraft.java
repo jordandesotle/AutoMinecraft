@@ -11,6 +11,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
+import com.jordandesotle.autominecraft.utils.CaptureScreen;
+
 @Mod(AutoMinecraft.MODID)
 public class AutoMinecraft {
     public static final String MODID = "autominecraft";
@@ -22,6 +24,12 @@ public class AutoMinecraft {
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
+        MinecraftForge.EVENT_BUS.register(new CaptureScreen());
+
+
+        System.out.println("AutoMinecraft: Hello World!");
+        System.out.println("Reigstered CaptureScreen");
+
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -33,7 +41,7 @@ public class AutoMinecraft {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            System.out.println("OnClientSetup: Hello World!");
         }
     }
 }
