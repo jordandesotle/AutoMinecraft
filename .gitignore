@@ -4,9 +4,11 @@
 # Ignores for Neural Network
 #################################################################
 
-__pycache__/
-*.pyc
-*.png
+
+neural_network/**/*.pyc
+neural_network/**/*.png
+neural_network/**/__pycache__/
+
 
 #################################################################
 # Ignores for Mod Development Environment
