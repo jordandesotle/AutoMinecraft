@@ -49,13 +49,19 @@ public class CaptureScreen {
     @SubscribeEvent
     public void onRenderTick(TickEvent.RenderTickEvent event) {
         if (event.phase == TickEvent.Phase.END) {
-            // Increment frame count on each render tick
-            frameCount++;
 
-            // Capture screenshot every 30 frames
-            if (frameCount % 30 == 0) {
+            // Only take picutures while in game
+            if(MC.player != null && !MC.isPaused()) {
 
-                captureScreenshot();
+                // Increment frame count on each render tick
+                frameCount++;
+
+                // Capture screenshot every 30 frames
+                if (frameCount % 30 == 0) {
+
+                    captureScreenshot();
+                }
+                
             }
         }
     }
