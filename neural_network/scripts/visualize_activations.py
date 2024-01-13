@@ -21,17 +21,43 @@ def visualize_activations(model_path="trained_model.h5", img_path=Config.VISUALI
     activations = intermediate_layer_model.predict(img_array)
 
     # Plot the activations
-    plot_activations(activations, layer_name)
+    plot_activations(activations, layer_name, figure_num=0)
 
-def plot_activations(activations, layer_name):
-    # Plot the activations
+
+
+def plot_activations(activations, layer_name, figure_num):
+    num_channels = activations.shape[-1]
+    num_rows = 8
+    num_cols = min(num_channels, 8)  # Set the maximum number of columns to 8 for better visualization
+
+    # Create a figure
     plt.figure(figsize=(8, 8))
-    for i in range(activations.shape[-1]):
-        plt.subplot(8, 8, i + 1)
-        plt.imshow(activations[0, :, :, i], cmap='viridis')
-        plt.axis('off')
-    plt.suptitle(f'Activations of Layer: {layer_name}')
-    plt.show()
+
+    for i in range(num_rows * num_cols):
+        channel_index = figure_num * num_rows * num_cols + i
+        if channel_index < num_channels:
+            plt.subplot(num_rows, num_cols, i + 1)
+            plt.imshow(activations[0, :, :, channel_index], cmap='viridis')
+            plt.axis('off')
+
+    plt.suptitle(f'Activations of Layer: {layer_name} (Figure {figure_num + 1})')
+
+    # Save the figure to an image file
+    plt.savefig(f'activations_layer_{layer_name}_figure_{figure_num + 1}.png')
+    plt.close()
+
+
+
+
+# def plot_activations(activations, layer_name):
+#     # Plot the activations
+#     plt.figure(figsize=(8, 8))
+#     for i in range(activations.shape[-1]):
+#         plt.subplot(8, 8, i + 1)
+#         plt.imshow(activations[0, :, :, i], cmap='viridis')
+#         plt.axis('off')
+#     plt.suptitle(f'Activations of Layer: {layer_name}')
+#     plt.show()
 
 if __name__ == "__main__":
     visualize_activations()

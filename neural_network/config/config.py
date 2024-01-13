@@ -17,15 +17,16 @@ class Config:
 
     # Data Configuration
     # TRAIN_DATA_DIR = 'data/game_output/session'
-    TRAIN_DATA_DIR = ABS_PATH + 'data/train'
-    VAL_DATA_DIR = ABS_PATH + 'data/validation'
+    TRAIN_DATA_DIR = ABS_PATH + 'data/game_output/'
+    VAL_DATA_DIR = ABS_PATH + 'data/game_output/'
 
     # Callbacks Configuration
     MODEL_CHECKPOINT_PATH = 'model_weights.h5'
     EARLY_STOPPING_PATIENCE = 3
 
+
     # Visualization Configuration
-    VISUALIZATION_EXAMPLE_IMAGE_PATH = 'path/to/example_image.jpg'
+    VISUALIZATION_EXAMPLE_IMAGE_PATH = ABS_PATH + 'data/game_output/mine_tree/move_to_tree/set2/screenshot_10.png'
 
 if __name__ == "__main__":
     # Example usage

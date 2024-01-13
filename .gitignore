@@ -9,7 +9,7 @@ neural_network/**/*.pyc
 neural_network/**/*.png
 neural_network/**/__pycache__/
 neural_network/venv
-
+neural_network/**/*.h5
 
 #################################################################
 # Ignores for Mod Development Environment
