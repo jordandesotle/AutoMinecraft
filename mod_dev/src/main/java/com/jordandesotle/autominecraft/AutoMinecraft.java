@@ -11,7 +11,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
-import com.jordandesotle.autominecraft.utils.CaptureScreen;
+import com.jordandesotle.autominecraft.capture.CaptureScreen;
 
 @Mod(AutoMinecraft.MODID)
 public class AutoMinecraft {
