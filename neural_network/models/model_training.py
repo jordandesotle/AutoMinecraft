@@ -4,19 +4,21 @@ from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.callbacks import ModelCheckpoint, EarlyStopping
 from models.model_architecture import build_model
 from utils.data_preprocessing import get_data_generators
+from config.config import Config
 
 def train_model():
     # Define constants
-    input_shape = (150, 150, 3)  # Adjust based on your image dimensions
-    num_classes = 1  # Change if you have more than two classes
-    batch_size = 32
-    num_epochs = 10
+    input_shape = Config.INPUT_SHAPE
+    num_classes = Config.NUM_CLASSES  # Change if you have more than two classes
+    batch_size = Config.BATCH_SIZE
+    num_epochs = Config.NUM_EPOCHS
+    learning_rate = Config.LEARNING_RATE
 
     # Build the model
     model = build_model(input_shape=input_shape, num_classes=num_classes)
 
     # Compile the model
-    model.compile(optimizer=Adam(learning_rate=0.001),
+    model.compile(optimizer=Adam(learning_rate=learning_rate),
                   loss='binary_crossentropy',
                   metrics=['accuracy'])
 

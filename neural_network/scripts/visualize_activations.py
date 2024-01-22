@@ -6,7 +6,10 @@ from tensorflow.keras.preprocessing import image
 from models.model_architecture import build_model
 from config.config import Config
 
-def visualize_activations(model_path="trained_model.h5", img_path=Config.VISUALIZATION_EXAMPLE_IMAGE_PATH, layer_name='conv2d_2'):
+from os import walk
+import os
+
+def visualize_activations(img_path, model_path=Config.MODEL_OUTPUT_PATH, layer_name='conv2d_2'):
     # Load the trained model
     model = load_model(model_path)
 
@@ -20,7 +23,7 @@ def visualize_activations(model_path="trained_model.h5", img_path=Config.VISUALI
     intermediate_layer_model = Model(inputs=model.input, outputs=model.get_layer(layer_name).output)
     activations = intermediate_layer_model.predict(img_array)
 
-    # Plot the activations
+    # Plot the an                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            /ctivations
     plot_activations(activations, layer_name, figure_num=0)
 
 
@@ -47,7 +50,36 @@ def plot_activations(activations, layer_name, figure_num):
     plt.close()
 
 
+def select_image():
 
+    dir_path = Config.VAL_DATA_DIR
+    # dir_path = os.path.dirname(os.path.realpath(__file__))  # current path
+    print(dir_path)
+
+    file_not_chosen = True
+
+    new_dir = dir_path
+    while(file_not_chosen):
+        f = os.listdir(new_dir)
+        # print(f)
+        count = 0
+
+        for file in f:
+            count += 1
+            print(f"{count}: {file}")
+
+        choice = int(input("Please enter a number: "))
+        name = f[choice-1]
+        # print(f"{dir_path}{name}")
+        if(os.path.isfile(f"{new_dir}{name}")):
+            file_not_chosen = False
+            filename = f"{new_dir}{name}"
+        else:
+            new_dir = f"{new_dir}{name}/"
+    
+    print(filename)
+
+    visualize_activations(filename)
 
 # def plot_activations(activations, layer_name):
 #     # Plot the activations
@@ -60,5 +92,9 @@ def plot_activations(activations, layer_name, figure_num):
 #     plt.show()
 
 if __name__ == "__main__":
-    visualize_activations()
+
+    pass
+
+
+    # visualize_activations()
 

@@ -29,7 +29,7 @@ def visualize_activations(model_path="trained_model.h5", img_path="path/to/examp
     model = load_model(model_path)
 
     # Load an example image
-    img = image.load_img(img_path, target_size=(150, 150))
+    img = image.load_img(img_path, target_size=(1834, 1000))
     img_array = image.img_to_array(img)
     img_array = np.expand_dims(img_array, axis=0)
     img_array /= 255.0

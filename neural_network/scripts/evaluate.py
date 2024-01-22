@@ -4,7 +4,7 @@ from tensorflow.keras.models import load_model
 from utils.data_preprocessing import get_data_generators
 from config.config import Config
 
-def evaluate_model(model_path="trained_model.h5"):
+def evaluate_model(model_path=Config.MODEL_OUTPUT_PATH):
     # Load the trained model
     model = load_model(model_path)
 

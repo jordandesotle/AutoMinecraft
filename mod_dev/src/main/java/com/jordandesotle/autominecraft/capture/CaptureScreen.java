@@ -24,7 +24,6 @@ public class CaptureScreen {
 
     DirectoryManager dirManager;
 
-
     private boolean takeScreenshots = false;            // toggled by the "K" key
     private int subFolderIndex = 0;                     // represents which folder is currently being recorded to
     private int setIndex = 0;                           // increases once all subfolders have been written to

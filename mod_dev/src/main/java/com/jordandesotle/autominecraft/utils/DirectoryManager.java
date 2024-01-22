@@ -23,7 +23,12 @@ public class DirectoryManager {
     // Creates the outline directories
     private boolean createDirectories() {
 
-        // Check to see if  exists
+        File gameOutputDir = new File(gameOutputPath);
+        if(!createDirectoryIfNotExist(gameOutputDir)) {
+            return false;
+        }
+
+        // Check to see if exists
         File actionDir = new File(gameOutputPath, actionName);
         if(!createDirectoryIfNotExist(actionDir)) {
             return false;
@@ -39,6 +44,9 @@ public class DirectoryManager {
         return true;
     }
 
+    /**
+     * Creates the specified directory if it does not exist
+    */
     // When provided a path, this function will check if it exists before creating it
     public boolean createDirectoryIfNotExist(File path) {
 

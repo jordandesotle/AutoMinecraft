@@ -3,9 +3,14 @@
 
 from scripts.train import train_model
 from scripts.evaluate import evaluate_model
-from scripts.visualize_activations import visualize_activations
+from scripts.visualize_activations import select_image
+
+import os
 
 def main():
+
+    os.system("clear")
+
     print("———————————————————————————————————————————————")
     print("Minecraft Convolutional Neural Network:")
     print("Select an action:")
@@ -21,7 +26,7 @@ def main():
     elif action == '2':
         evaluate_model()
     elif action == '3':
-        visualize_activations()
+        select_image()
     elif action == '4':
         print("Exiting the script.")
     else:

@@ -33,7 +33,7 @@ def train_model():
     )
 
     # Save the entire model (including architecture) after training
-    model.save("trained_model.h5")
+    model.save(Config.MODEL_OUTPUT_PATH)
 
 if __name__ == "__main__":
     train_model()
