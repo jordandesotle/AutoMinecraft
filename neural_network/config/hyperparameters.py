@@ -7,21 +7,6 @@ class Hyperparameters:
     CONV3_FILTERS = 128
     DENSE_UNITS = 128
 
-    # Training Hyperparameters
-    BATCH_SIZE = 32
-    NUM_EPOCHS = 10
-    LEARNING_RATE = 0.001
-
-    # Data Hyperparameters
-    INPUT_SHAPE = (150, 150, 3)  # Adjust based on your image dimensions
-    NUM_CLASSES = 1  # Change if you have more than two classes
-
-    # Callbacks Hyperparameters
-    MODEL_CHECKPOINT_PATH = 'model_weights.h5'
-    EARLY_STOPPING_PATIENCE = 3
-
-    # Visualization Hyperparameters
-    VISUALIZATION_EXAMPLE_IMAGE_PATH = 'path/to/example_image.jpg'
 
 if __name__ == "__main__":
     # Example usage
