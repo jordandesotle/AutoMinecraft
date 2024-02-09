@@ -4,12 +4,15 @@
 from scripts.train import train_model
 from scripts.evaluate import evaluate_model
 from scripts.visualize_activations import select_image
+from utils.hardware_check import hardware_check
 
 import os
 
 def main():
 
     os.system("clear")
+
+    hardware_check()
 
     print("———————————————————————————————————————————————")
     print("Minecraft Convolutional Neural Network:")

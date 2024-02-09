@@ -7,9 +7,10 @@ import java.util.regex.Pattern;
 
 public class DirectoryManager {
 
-    private final String gameOutputPath = "/home/jordan/Documents/AutoMinecraft_Root/neural_network/data/game_output/";         // folder that contains all output from game
-    private final String actionName = "mine_tree";                                                                              // folder that defines overall action to be learned
-    private final String[] subfolderNames = {"align_with_tree", "move_to_tree", "break_tree", "success"};                       // different sub-actions we want to capture
+    private final String actionName = "walking"; // folder that defines overall action to be learned
+    private final String gameOutputPath = "/home/jordan/Documents/AutoMinecraft_Root/neural_network/data/game_output/";         // folder that contains all output from game4
+
+    private final String[] subfolderNames = {"in_tundra"}; // "in_plain" "in_forest", "in_desert", "in_tundra" // different sub-actions we want to capture
 
     public DirectoryManager() {
 

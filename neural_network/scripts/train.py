@@ -32,6 +32,8 @@ def train_model():
         callbacks=[checkpoint, early_stopping]
     )
 
+    
+
     # Save the entire model (including architecture) after training
     model.save(Config.MODEL_OUTPUT_PATH)
 
