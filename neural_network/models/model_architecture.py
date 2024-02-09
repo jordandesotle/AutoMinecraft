@@ -1,9 +1,9 @@
 # model_architecture.py
-
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
+from config.config import Config
 
-def build_model(input_shape=(150, 150, 3), num_classes=1):
+def build_model(input_shape=Config.INPUT_SHAPE, num_classes=Config.NUM_CLASSES):
     model = Sequential()
 
     # Convolutional layers
