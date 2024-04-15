@@ -21,7 +21,7 @@ def build_model(input_shape=Config.INPUT_SHAPE, num_classes=Config.NUM_CLASSES):
 
     # Fully connected layers
     model.add(Dense(128, activation='relu'))
-    model.add(Dense(num_classes, activation='sigmoid'))  # 'sigmoid' for binary classification
+    model.add(Dense(num_classes, activation='softmax'))
 
     return model
 

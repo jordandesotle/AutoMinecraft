@@ -1,5 +1,6 @@
 package com.jordandesotle.autominecraft;
 
+import com.jordandesotle.autominecraft.capture.LiveCapture;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -24,7 +25,8 @@ public class AutoMinecraft {
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
-        MinecraftForge.EVENT_BUS.register(new CaptureScreen());
+        // MinecraftForge.EVENT_BUS.register(new CaptureScreen());
+        MinecraftForge.EVENT_BUS.register(new LiveCapture());
 
 
         System.out.println("AutoMinecraft: Hello World!");

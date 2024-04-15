@@ -9,9 +9,5 @@ class Hyperparameters:
 
 
 if __name__ == "__main__":
-    # Example usage
-    # - Uncomment and modify the lines below based on your needs
-
-    # # Example: Access hyperparameters
-    # print(Hyperparameters.CONV1_FILTERS)
+    # Example usage    # print(Hyperparameters.CONV1_FILTERS)
     # print(Hyperparameters.BATCH_SIZE)

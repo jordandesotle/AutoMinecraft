@@ -5,6 +5,7 @@ from scripts.train import train_model
 from scripts.evaluate import evaluate_model
 from scripts.visualize_activations import select_image
 from utils.hardware_check import hardware_check
+from scripts.predict import live_demo, predict
 
 import os
 
@@ -20,7 +21,9 @@ def main():
     print("1. Train Model")
     print("2. Evaluate Model")
     print("3. Visualize Activations")
-    print("4. Exit")
+    print("4. Predict")
+    print("5. Live Demo")
+    print("6. Exit")
 
     action = input("Enter the action number: ")
 
@@ -31,6 +34,10 @@ def main():
     elif action == '3':
         select_image()
     elif action == '4':
+        predict()
+    elif action == '5':
+        live_demo()
+    elif action == '6':
         print("Exiting the script.")
     else:
         print("Invalid action. Please enter a valid action number.")

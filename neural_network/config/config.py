@@ -6,9 +6,8 @@ from utils.get_num_classes import get_num_classes
 class Config:
 
     # Model Configuration
-    INPUT_SHAPE = (500, 917, 3)  # Adjust based on your image dimensions
-    NUM_CLASSES = 1  # Change if you have more than two classes
-    # NUM_CLASSES = get_num_classes()
+    INPUT_SHAPE = (500, 917, 3)
+    NUM_CLASSES = 6
 
     # Training Configuration
     BATCH_SIZE = 16
@@ -26,14 +25,13 @@ class Config:
     # Output directory
     OUTPUT_DIR = ABS_PATH + "output/"
 
+    INPUT_PATH = ABS_PATH + 'data/input'
+
     # Model output files
-    MODEL_CHECKPOINT_PATH = OUTPUT_DIR + 'model_weights.h5'
-    MODEL_OUTPUT_PATH = OUTPUT_DIR + 'trained_model.h5'
+    MODEL_CHECKPOINT_PATH = OUTPUT_DIR + 'model_weights.keras'
+    MODEL_OUTPUT_PATH = OUTPUT_DIR + 'trained_model.keras'
 
     EARLY_STOPPING_PATIENCE = 3
-
-    # Visualization Configuration
-    VISUALIZATION_EXAMPLE_IMAGE_PATH = ABS_PATH + 'data/train/mine_tree/move_to_tree/set2/screenshot_10.png'
 
 if __name__ == "__main__":
     # Example usage

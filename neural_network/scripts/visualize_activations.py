@@ -81,16 +81,6 @@ def select_image():
 
     visualize_activations(filename)
 
-# def plot_activations(activations, layer_name):
-#     # Plot the activations
-#     plt.figure(figsize=(8, 8))
-#     for i in range(activations.shape[-1]):
-#         plt.subplot(8, 8, i + 1)
-#         plt.imshow(activations[0, :, :, i], cmap='viridis')
-#         plt.axis('off')
-#     plt.suptitle(f'Activations of Layer: {layer_name}')
-#     plt.show()
-
 if __name__ == "__main__":
 
     pass

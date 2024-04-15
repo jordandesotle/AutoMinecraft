@@ -12,7 +12,7 @@ def train_model():
 
     # Compile the model
     model.compile(optimizer=Adam(learning_rate=Config.LEARNING_RATE),
-                  loss='binary_crossentropy',
+                  loss='sparse_categorical_crossentropy',
                   metrics=['accuracy'])
 
     # Set up data generators
