@@ -2,7 +2,7 @@
 # AutoMinecraft
 
 ## Project Description
-This repo contains the source code the development of an AI controlled minecraft bot. The purpose of this project is to be able to capture the players screen while playing, process the image, and allow the bot to interact with the game.
+This repo contains the source code the development of an AI controlled minecraft bot. The purpose of this project is to be able to capture the players screen while playing, process the image, and determine what the player is doing in the game.
 
 The main components of this project are as follows:
 - [Client Mod](https://github.com/jordandesotle/AutoMinecraft/tree/main/mod_dev)
@@ -20,9 +20,9 @@ The following must be installed on your computer before installation:
 
 ## Installation
 
-### Linux Installation
+### General Installation
 
-To install this project in linux, run the following commands
+To install this project, run the following commands
 
 First, choose a directory for your plugin source code
 ```bash
@@ -34,9 +34,10 @@ git clone https://github.com/jordandesotle/AutoMinecraft.git
 ```
 Now, you should be able to open your project with the IDE of your choice
 
-### Windows Installation
+The next step is to build the model using the training dataset. You may need to modify the config.py file to match the directory of your project.
 
-Coming Soon...
+After the model is trained, you can run the start-up script and run the live demo. You will have to have an instance of Minecraft running with the mod installed.
+
 ## Authors
 
 - [@jordandesotle](https://www.github.com/jordandesotle)
