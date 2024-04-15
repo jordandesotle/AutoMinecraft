@@ -6,6 +6,7 @@ The `neural_network` directory contains scripts, models, and data for developing
 
 - **config**: Contains configuration files for the neural network.
   - `config.py`: Configuration parameters for the model, training, and data.
+  - `hyperparameters.py`: Hyperparameters for the training the model
 
 - **data**: Directory for organizing training and validation data. See `data/README.md` for more details on the structure of the data.
 
@@ -14,15 +15,18 @@ The `neural_network` directory contains scripts, models, and data for developing
 
 - **scripts**: Contains Python scripts for different actions related to the neural network.
   - `train.py`: Script for training the neural network.
+  - `predict.py`: Script to make predictions with a trained model.
   - `evaluate.py`: Script for evaluating the performance of the trained model.
   - `visualize_activations.py`: Script for visualizing activations in the neural network.
 
 - **utils**: Utility scripts for data preprocessing and other functions.
   - `data_preprocessing.py`: Script for generating data generators.
-
-- `main.py`: Main script to interact with the neural network (train, evaluate, visualize activations).
+  - `data_labeling.py`: Utility script to rename files in a directory and combine them. Used when remodeling the structure of the training and validation data
+  - `hardware_check.py`: Experimental script to enable GPU exceleration
 
 - `venv`: Virtual environment for managing Python dependencies.
+
+- `main.py`: Main script to interact with the neural network (train, evaluate, visualize, predict).
 
 - `README.md`: Documentation providing an overview of the neural network directory structure and usage.
 
