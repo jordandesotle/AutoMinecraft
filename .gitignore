@@ -10,6 +10,7 @@ neural_network/**/*.png
 neural_network/**/__pycache__/
 neural_network/venv
 neural_network/**/*.h5
+neural_network/**/*.keras
 
 #################################################################
 # Ignores for Mod Development Environment
