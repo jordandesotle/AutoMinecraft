@@ -11,6 +11,7 @@ public class ImageServer {
     private Socket clientSocket = null;
     private boolean isRunning;
 
+
     public ImageServer(int port) {
         try {
             serverSocket = new ServerSocket(port);
@@ -18,6 +19,7 @@ public class ImageServer {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 
     public void startServer() {
@@ -38,6 +40,7 @@ public class ImageServer {
         }).start();
         System.out.println("Server started and listening for connections...");
     }
+
 
     public void stopServer() {
         try {

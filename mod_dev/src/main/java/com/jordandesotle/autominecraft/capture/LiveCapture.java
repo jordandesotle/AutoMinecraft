@@ -1,7 +1,5 @@
 package com.jordandesotle.autominecraft.capture;
 
-import com.jordandesotle.autominecraft.utils.DirectoryManager;
-
 import com.jordandesotle.autominecraft.utils.ImageServer;
 import com.jordandesotle.autominecraft.utils.LiveExportManager;
 import net.minecraft.client.Minecraft;
@@ -18,7 +16,6 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.nio.ByteBuffer;
-import java.nio.file.Path;
 
 import static org.lwjgl.opengl.GL11.*;
 
