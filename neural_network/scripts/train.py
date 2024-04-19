@@ -1,4 +1,4 @@
-# train.py
+import os
 
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.callbacks import ModelCheckpoint, EarlyStopping
@@ -7,8 +7,12 @@ from utils.data_preprocessing import get_data_generators
 from config.config import Config
 
 def train_model():
+
     # Build the model
     model = build_model(input_shape=Config.INPUT_SHAPE, num_classes=Config.NUM_CLASSES)
+    model.summary() # show model summary
+    input("Press ENTER to train the model")
+    os.system("clear")
 
     # Compile the model
     model.compile(optimizer=Adam(learning_rate=Config.LEARNING_RATE),
@@ -32,10 +36,9 @@ def train_model():
         callbacks=[checkpoint, early_stopping]
     )
 
-    
-
     # Save the entire model (including architecture) after training
     model.save(Config.MODEL_OUTPUT_PATH)
+
 
 if __name__ == "__main__":
     train_model()

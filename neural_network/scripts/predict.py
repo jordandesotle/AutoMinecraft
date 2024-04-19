@@ -3,15 +3,13 @@ import re
 import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
-from config.config import Config  # Import the Config class from config.py
+from config.config import Config
 from PIL import Image
 import socket
 
 
 def natural_sort_key(s):
     return [int(text) if text.isdigit() else text.lower() for text in re.split(r'(\d+)', s)]
-
-
 
 def live_demo():
 
@@ -43,7 +41,7 @@ def live_demo():
 	def preprocess_image(image_path):
 		img = tf.keras.preprocessing.image.load_img(image_path, target_size=Config.INPUT_SHAPE[:2])
 		img_array = tf.keras.preprocessing.image.img_to_array(img)
-		img_array = tf.expand_dims(img_array, 0)  # Create batch axis
+		img_array = tf.expand_dims(img_array, 0)
 		return img_array
 	
 	# Function to make predictions
@@ -113,18 +111,9 @@ def live_demo():
 
 
 
-
-
-
-
-
-
-
-
-
-
 def predict():
 
+	print("Loading model... one moment")
 	model = tf.keras.models.load_model(Config.MODEL_OUTPUT_PATH)
 
 	def select_image():
@@ -135,7 +124,7 @@ def predict():
 		f.sort()
 
 		os.system("clear")
-		print("———————————————————————————————————————————————")
+		print(f"{'─'*50}")
 		print("Select a folder:")
 		for i, folder in enumerate(f, start=1):
 			print(f"{i}: {folder}")
@@ -151,7 +140,7 @@ def predict():
 		images.sort(key=natural_sort_key)
 
 		os.system("clear")
-		print("———————————————————————————————————————————————")
+		print(f"{'─'*50}")
 		print("Select an Image to compute:")
 		for i, image in enumerate(images, start=1):
 			print(f"{i}: {image}")

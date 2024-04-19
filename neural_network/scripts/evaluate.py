@@ -5,6 +5,9 @@ from utils.data_preprocessing import get_data_generators
 from config.config import Config
 
 def evaluate_model(model_path=Config.MODEL_OUTPUT_PATH):
+
+    print("Loading model... one moment")
+    
     # Load the trained model
     model = load_model(model_path)
 
