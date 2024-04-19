@@ -1,4 +1,3 @@
-# hyperparameters.py
 
 class Hyperparameters:
     # Model Hyperparameters
@@ -9,5 +8,8 @@ class Hyperparameters:
 
 
 if __name__ == "__main__":
-    # Example usage    # print(Hyperparameters.CONV1_FILTERS)
-    # print(Hyperparameters.BATCH_SIZE)
+    
+    print(Hyperparameters.CONV1_FILTERS)
+    print(Hyperparameters.CONV2_FILTERS)
+    print(Hyperparameters.CONV3_FILTERS)
+    print(Hyperparameters.DENSE_UNITS)
