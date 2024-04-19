@@ -17,7 +17,7 @@ def get_data_generators(batch_size, input_shape):
         Config.TRAIN_DATA_DIR,
         target_size=input_shape[:2],
         batch_size=batch_size,
-        class_mode='categorical', # sparse
+        class_mode='sparse', # sparse from categorical
         shuffle=True
     )
 
@@ -25,7 +25,7 @@ def get_data_generators(batch_size, input_shape):
         Config.VAL_DATA_DIR,
         target_size=input_shape[:2],
         batch_size=batch_size,
-        class_mode='categorical', # sparse
+        class_mode='sparse', # sparse from categorical
         shuffle=False  # Do not shuffle for validation
     )
 
